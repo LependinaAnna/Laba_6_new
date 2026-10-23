@@ -1,0 +1,71 @@
+Домашнее задание вариант 16.
+Условие задачи 16. Написать программу, которая выводит результат сравнения двух введенных пользователем чисел в виде математического выражения (X < Y или X = Y или X > Y).
+
+1. Алгоритм.
+Начало
+Определить и ввести константы: 
+1) X – первое число.
+2) Y – второе число.
+Сравнить два числа. 
+Возможны следующие варианты:
+1) X < Y.
+2) X = Y. 
+3) X > Y.
+Вывести результат сравнения в виде математического выражения.
+Конец
+
+2. Блок-схема алгоритма. Ссылка: в draw.io^ https://drive.google.com/file/d/1BYl35x1H40E7Z9s8PG_FZShaoC-TrXD4/view?usp=sharing
+
+3. Реализация программы.
+#define _CRT_SECURE_NO_DEPRECATE
+#define _USE_MATH_DEFINES 
+#include <locale.h>
+#include <stdio.h>
+#include <math.h>
+int homework(int x, int y);
+
+int main()
+{
+    setlocale(LC_ALL, "RUS"); 
+    
+    int result, x, y;
+    puts("Введите первое число");
+    scanf("%d", &x);
+    puts("Введите второе число");
+    scanf("%d", &y);
+    printf("X = %d, Y = %d\n", x, y);
+    result = homework(x, y);
+    if (result == -1) 
+    {
+        printf("%d < %d\n", x, y);
+    } 
+    else if (result == 0) 
+    {
+        printf("%d > %d\n", x, y);
+    } 
+    else 
+    {
+        printf("%d = %d\n", x, y);
+    }
+    return 0;
+}
+
+int homework(int x, int y)
+{
+    int res;
+    if (x < y) 
+    {
+        res = -1;
+    } 
+    else if (x > y) 
+    {
+        res = 0;
+    } 
+    else 
+    {
+        res = 1;
+    }
+    return res;
+}
+
+4. Информация о разработчике: Лепендина Анна группа бИД-261
